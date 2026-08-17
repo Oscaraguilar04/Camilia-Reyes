@@ -496,6 +496,14 @@ section[id] {
   pointer-events: none;
 }
 
+/* The frames carry captions, so they get the same bottom scrim as the video cards
+   rather than the plain warm wash. */
+.hero-frame::after {
+  background:
+    linear-gradient(180deg, rgba(36, 25, 20, 0.12) 42%, rgba(36, 25, 20, 0.74)),
+    linear-gradient(180deg, rgba(52, 37, 29, 0.05), rgba(180, 111, 82, 0.16));
+}
+
 /* Mobile hero: portrait stays, the scattered desktop frames do not */
 
 .hero-stage .hero-frame {
@@ -544,9 +552,10 @@ section[id] {
 .hero-frame-meta span {
   display: block;
   font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.85;
+  color: var(--sand);
 }
 
 .hero-frame-meta strong {
@@ -1648,10 +1657,25 @@ fieldset {
   .hero-stage .hero-frame {
     display: block;
     position: absolute;
-    width: 27%;
     aspect-ratio: 9 / 16;
     z-index: 3;
     box-shadow: 0 18px 40px rgba(36, 25, 20, 0.18);
+  }
+
+  /* These frames are only ~100-150px wide, so their captions scale with the viewport
+     instead of sitting at the mobile-strip size. */
+  .hero-stage .hero-frame-meta {
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+  }
+
+  .hero-stage .hero-frame-meta span {
+    font-size: clamp(0.55rem, 0.72vw, 0.66rem);
+  }
+
+  .hero-stage .hero-frame-meta strong {
+    font-size: clamp(0.72rem, 1vw, 0.9rem);
   }
 
   .hero-portrait {
@@ -1667,27 +1691,27 @@ fieldset {
     object-position: 50% 28%;
   }
 
-  .frame-a {
+  .hero-stage .frame-a {
     left: 0;
     top: 0;
     width: 24%;
   }
 
-  .frame-b {
+  .hero-stage .frame-b {
     left: 4%;
     bottom: 2%;
     width: 22%;
     z-index: 4;
   }
 
-  .frame-c {
+  .hero-stage .frame-c {
     right: 0;
     top: 0;
     width: 20%;
     z-index: 4;
   }
 
-  .frame-d {
+  .hero-stage .frame-d {
     right: 2%;
     bottom: 0;
     width: 23%;
