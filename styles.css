@@ -651,7 +651,8 @@ section[id] {
   margin: 0;
   font-size: 1.5rem;
   color: var(--paper);
-  text-shadow: 0 6px 20px rgba(36, 25, 20, 0.55);
+  /* Doubled shadow so the label survives bright skies in any listing photo. */
+  text-shadow: 0 1px 3px rgba(36, 25, 20, 0.65), 0 6px 22px rgba(36, 25, 20, 0.7);
 }
 
 .note-pick.is-hidden {
@@ -1167,16 +1168,6 @@ section[id] {
 
 .about-photo img {
   object-position: 50% 30%;
-}
-
-.about-hand {
-  position: absolute;
-  right: 0.9rem;
-  bottom: 0.9rem;
-  z-index: 2;
-  font-size: 1.5rem;
-  color: var(--paper);
-  text-shadow: 0 6px 20px rgba(36, 25, 20, 0.55);
 }
 
 .about-copy blockquote {
