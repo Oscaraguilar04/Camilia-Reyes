@@ -1320,10 +1320,13 @@ fieldset {
 }
 
 .mobile-bar a {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
   font-size: 0.82rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .mobile-bar-main {
